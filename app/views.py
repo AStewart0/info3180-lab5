@@ -96,7 +96,8 @@ def movies():
 
 @app.route('/api/v1/posters/<filename>')
 def get_poster(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+    upload_folder = os.path.join(os.getcwd(), app.config['UPLOAD_FOLDER'])
+    return send_from_directory(upload_folder, filename)
 
 
 @app.route('/api/v1/csrf-token', methods=['GET'])

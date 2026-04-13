@@ -16,3 +16,4 @@ migrate = Migrate(app, db)
 csrf = CSRFProtect(app)
 
 from app import views
+
